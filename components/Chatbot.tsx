@@ -88,8 +88,8 @@ export default function Chatbot() {
         aria-label={open ? "Fechar chat" : "Abrir chat"}
         className={`fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 ${
           open
-            ? "bg-[rgba(255,255,255,.12)] text-[#eaf6ee] hover:bg-[rgba(255,255,255,.18)] shadow-[0_4px_14px_rgba(0,0,0,.35)]"
-            : "bg-[#45d183] text-[#08301f] hover:bg-[#3bc476] pulse-glow"
+            ? "bg-[#45d183] text-white hover:bg-[#3bc476] shadow-[0_4px_14px_rgba(0,0,0,.35)]"
+            : "bg-[#45d183] text-white hover:bg-[#3bc476] pulse-glow"
         }`}
       >
         {open ? <IconX /> : <IconChat />}
