@@ -173,7 +173,7 @@ export default function Chatbot() {
                   key={s}
                   onClick={() => send(s)}
                   disabled={loading}
-                  className="whitespace-nowrap text-[12px] text-[#8ff0bc] bg-[rgba(116,230,166,.10)] hover:bg-[rgba(116,230,166,.18)] disabled:opacity-35 border border-[rgba(116,230,166,.22)] px-3 py-1.5 rounded-full transition-colors flex-shrink-0"
+                  className="whitespace-nowrap text-[12px] text-white bg-[rgba(116,230,166,.10)] hover:bg-[rgba(116,230,166,.18)] disabled:opacity-35 border border-[rgba(116,230,166,.22)] px-3 py-1.5 rounded-full transition-colors flex-shrink-0"
                 >
                   {s}
                 </button>

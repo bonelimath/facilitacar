@@ -212,7 +212,7 @@ export default function StepResult({
             <span className="text-[12px] font-bold uppercase tracking-[0.05em] text-[rgba(255,255,255,.62)]">
               Seu estado:
             </span>
-            <span className="inline-flex items-center text-[13px] font-semibold text-[#8ff0bc] bg-[rgba(116,230,166,.13)] border border-[rgba(116,230,166,.25)] px-3 py-0.5 rounded-full">
+            <span className="inline-flex items-center text-[13px] font-semibold text-white bg-[rgba(116,230,166,.13)] border border-[rgba(116,230,166,.25)] px-3 py-0.5 rounded-full">
               {ufLabel}
             </span>
           </div>
@@ -239,7 +239,7 @@ export default function StepResult({
       {/* Ponto de atendimento — sempre visível */}
       {orgao && (
         <div className="bg-[rgba(255,255,255,.04)] border border-[rgba(255,255,255,.10)] rounded-[16px] p-5 space-y-4">
-          <p className="text-[12px] font-bold uppercase tracking-[0.05em] text-[#8ff0bc]">
+          <p className="text-[12px] font-bold uppercase tracking-[0.05em] text-[rgba(255,255,255,.75)]">
             Ponto de atendimento
           </p>
 
@@ -285,7 +285,7 @@ export default function StepResult({
             href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(orgao.endereco)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border border-[rgba(155,122,78,.30)] text-[#9B7A4E] hover:border-[rgba(155,122,78,.60)] hover:bg-[rgba(155,122,78,.08)] hover:-translate-y-0.5 active:translate-y-0 font-semibold px-4 py-2.5 rounded-[11px] text-[13.5px] transition-all"
+            className="inline-flex items-center gap-2 bg-[#7A5A35] hover:bg-[#8B6A42] hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(122,90,53,.35)] active:bg-[#6B4E2C] active:translate-y-0 text-white font-semibold px-4 py-2.5 rounded-[11px] text-[13.5px] transition-all shadow-[0_4px_14px_rgba(122,90,53,.25)]"
           >
             <IconMapPin />
             Ver localização no Google Maps

@@ -36,7 +36,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen flex flex-col">
       <header className="sticky top-0 z-40 border-b border-white/10 bg-[#082d1f]/80 backdrop-blur-md">
         <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
           <button
@@ -54,13 +54,13 @@ export default function Home() {
               Facilita<span className="text-[#74e6a6]">CAR</span>
             </span>
           </button>
-          <span className="text-[12px] font-semibold px-3 py-1 rounded-full tracking-wide text-[#8ff0bc] bg-[rgba(116,230,166,.13)] border border-[rgba(116,230,166,.25)]">
-            Manual Simplificado do CAR
+          <span className="text-[11px] font-semibold px-3 py-1 rounded-full tracking-wide text-white bg-[rgba(116,230,166,.13)] border border-[rgba(116,230,166,.25)] text-center leading-tight">
+            Manual Simplificado<br />do CAR
           </span>
         </div>
       </header>
 
-      <div className="max-w-5xl mx-auto px-4 py-10">
+      <div className="flex-1 flex flex-col justify-center max-w-6xl w-full mx-auto px-6 lg:px-12 py-10">
         {step === "intro" && (
           <StepIntro
             selectedUF={selectedUF}
@@ -93,6 +93,12 @@ export default function Home() {
       </div>
 
       <Chatbot />
+
+      <footer className="border-t border-white/10">
+        <div className="max-w-5xl mx-auto px-4 py-6 text-center text-[13px] text-[rgba(255,255,255,1)]">
+          FacilitaCAR © {new Date().getFullYear()} — Todos os direitos reservados
+        </div>
+      </footer>
     </main>
   );
 }

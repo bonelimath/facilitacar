@@ -47,14 +47,14 @@ export default function StepIntro({
   onContinue: () => void;
 }) {
   return (
-    <div className="animate-in grid grid-cols-1 lg:grid-cols-2 gap-10 items-center py-6">
+    <div className="animate-in grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-24 items-center py-6">
       {/* Coluna esquerda — badge, H1, seleção de UF, CTA */}
       <div className="space-y-7">
-        <div className="inline-flex items-center text-[13px] font-semibold text-[#8ff0bc] bg-[rgba(116,230,166,.13)] border border-[rgba(116,230,166,.25)] px-4 py-1.5 rounded-full">
+        <div className="inline-flex items-center text-[13px] font-semibold text-white bg-[rgba(116,230,166,.13)] border border-[rgba(116,230,166,.25)] px-4 py-1.5 rounded-full">
           Guia gratuito e simplificado
         </div>
 
-        <h1 className="text-[46px] sm:text-[50px] leading-[1.05] font-extrabold tracking-[-0.02em] text-[#eaf6ee]">
+        <h1 className="text-[30px] sm:text-[42px] lg:text-[50px] leading-[1.05] font-extrabold tracking-[-0.02em] text-[#eaf6ee]">
           Manual Simplificado do{" "}
           <span className="text-[#74e6a6]">CAR</span>
         </h1>
@@ -69,7 +69,7 @@ export default function StepIntro({
 
         {/* Card de seleção de UF */}
         <div className="bg-[rgba(255,255,255,.04)] border border-[rgba(255,255,255,.10)] rounded-[16px] p-5 space-y-3">
-          <p className="text-[12px] font-bold uppercase tracking-[0.05em] text-[#8ff0bc] flex items-center gap-1.5">
+          <p className="text-[12px] font-bold uppercase tracking-[0.05em] text-[rgba(255,255,255,.75)] flex items-center gap-1.5">
             <IconMapPin />
             Selecione seu estado
           </p>
@@ -126,7 +126,7 @@ export default function StepIntro({
           serve para mostrar onde fica sua área de produção, as áreas de
           preservação e outras informações ambientais.
         </p>
-        <p className="text-[12px] font-bold uppercase tracking-[0.04em] text-[#8ff0bc]">
+        <p className="text-[12px] font-bold uppercase tracking-[0.04em] text-[rgba(255,255,255,.75)]">
           Ter o CAR regularizado pode ajudar você a:
         </p>
         <ul className="space-y-3">
@@ -140,16 +140,17 @@ export default function StepIntro({
           ))}
         </ul>
 
-        <p className="text-[13.5px] text-[rgba(255,255,255,.62)] pt-1">
+        <p className="text-[13.5px] text-[rgba(255,255,255,.85)] pt-1">
           Mais informações,{" "}
           <a
             href="https://www.car.gov.br/#/sobre"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#9B7A4E] hover:text-[#B08C5E] underline underline-offset-2 transition-colors"
+            className="text-[#9B7A4E] hover:text-[#B08C5E] font-bold transition-colors"
           >
             clique aqui
           </a>
+          .
         </p>
       </div>
     </div>
