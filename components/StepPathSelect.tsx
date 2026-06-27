@@ -63,7 +63,7 @@ export default function StepPathSelect({
   onBack: () => void;
 }) {
   return (
-    <div className="animate-in max-w-[720px] mx-auto space-y-8 py-4">
+    <div className="animate-in w-full max-w-[720px] mx-auto space-y-8 py-4">
       <div className="space-y-3">
         <button
           onClick={onBack}

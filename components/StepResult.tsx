@@ -88,7 +88,7 @@ export default function StepResult({
     ESTADOS_LIST.find((e) => e.value === selectedUF)?.label ?? selectedUF;
 
   return (
-    <div className="animate-in max-w-[720px] mx-auto space-y-6 py-4">
+    <div className="animate-in w-full max-w-[720px] mx-auto space-y-6 py-4">
       {/* Cabeçalho */}
       <div className="space-y-3">
         <button

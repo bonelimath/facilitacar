@@ -67,7 +67,7 @@ export default function StepChecklist({
   // ── Fase 1: verificação ───────────────────────────────────────────────────
   if (phase === "confirm") {
     return (
-      <div className="animate-in max-w-[720px] mx-auto space-y-6 py-4">
+      <div className="animate-in w-full max-w-[720px] mx-auto space-y-6 py-4">
         <div className="space-y-3">
           <button
             onClick={onBack}
@@ -136,7 +136,7 @@ export default function StepChecklist({
 
   // ── Fase 2: seleção dos itens faltantes ──────────────────────────────────
   return (
-    <div className="animate-in max-w-[720px] mx-auto space-y-6 py-4">
+    <div className="animate-in w-full max-w-[720px] mx-auto space-y-6 py-4">
       <div className="space-y-3">
         <button
           onClick={() => { setPhase("confirm"); setChecked(new Set()); }}
