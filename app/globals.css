@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --color-green-deep: #082d1f;
+  --color-green-bg: #0b3a28;
+  --color-green-top: #12543b;
+  --color-accent: #74e6a6;
+  --color-accent-soft: #8ff0bc;
+  --color-cta: #45d183;
+  --color-cta-dark: #08301f;
+  --color-app-text: #eaf6ee;
+  --color-warn: #f4de9b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(120% 80% at 50% -10%, #12543b 0%, #0b3a28 45%, #082d1f 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #eaf6ee;
+  font-family: var(--font-plus-jakarta), 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: floatUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(69, 209, 131, 0.45), 0 4px 14px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(69, 209, 131, 0), 0 4px 14px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2.5s ease-out infinite;
+}
