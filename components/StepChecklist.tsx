@@ -148,12 +148,12 @@ export default function StepChecklist({
         <h2 className="text-[30px] sm:text-[34px] font-extrabold tracking-[-0.02em] text-[#eaf6ee]">
           {isNew
             ? "Quais documentos você não possui?"
-            : "O que você precisa corrigir?"}
+            : "Selecione os itens que deseja corrigir ou atualizar"}
         </h2>
         <p className="text-[15px] text-[rgba(255,255,255,.78)]">
           {isNew
             ? "Selecione os documentos que estão faltando."
-            : "Selecione os itens que deseja corrigir ou atualizar."}
+            : "O que você precisa corrigir?"}
         </p>
       </div>
 

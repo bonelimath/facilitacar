@@ -42,7 +42,7 @@ const paths: {
   {
     id: "new",
     Icon: IconClipboard,
-    title: "Fazer um novo cadastro",
+    title: "Fazer um cadastro",
     description:
       "Nunca fiz o CAR da minha propriedade e quero fazer pela primeira vez.",
   },

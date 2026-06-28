@@ -152,6 +152,33 @@ export default function StepIntro({
           </a>
           .
         </p>
+
+        <div className="border-t border-[rgba(255,255,255,.10)] pt-5 flex flex-col sm:flex-row sm:items-center gap-4">
+          <p className="text-[13px] text-[rgba(255,255,255,.72)] leading-relaxed flex-1">
+            Acesse o aplicativo{" "}
+            <strong className="text-[#eaf6ee] font-semibold">Meu Imóvel Rural</strong>{" "}
+            para consultar informações do seu imóvel, acompanhar a situação do CAR, verificar notificações e pendências e acessar outros serviços de regularização ambiental.
+          </p>
+          <a
+            href="https://play.google.com/store/apps/details?id=br.gov.dataprev.meuimovelrural"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-shrink-0 inline-flex items-center gap-2.5 bg-[#1a1a1a] hover:bg-[#2a2a2a] border border-[rgba(255,255,255,.18)] text-white rounded-[10px] px-4 py-2.5 transition-colors"
+          >
+            <svg width="20" height="22" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M48 16L288 256L48 496C30.4 487.2 18 468.8 18 448V64C18 43.2 30.4 24.8 48 16Z" fill="#32BBFF"/>
+              <path d="M366 194L48 16C30.4 24.8 18 43.2 18 64L288 256L366 194Z" fill="#32BBFF"/>
+              <path d="M366 318L288 256L18 448C18 468.8 30.4 487.2 48 496L366 318Z" fill="#32BBFF"/>
+              <path d="M432 288C448.4 278.4 458 262.4 458 256C458 249.6 448.4 233.6 432 224L366 194L288 256L366 318L432 288Z" fill="#FFD400"/>
+              <path d="M48 496L288 256L366 318L48 496Z" fill="#FF3333"/>
+              <path d="M48 16L288 256L366 194L48 16Z" fill="#00F076"/>
+            </svg>
+            <div className="flex flex-col leading-tight">
+              <span className="text-[9px] text-[rgba(255,255,255,.7)] uppercase tracking-wide">Disponível no</span>
+              <span className="text-[14px] font-semibold">Google Play</span>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   );

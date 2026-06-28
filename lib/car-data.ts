@@ -145,8 +145,8 @@ export type CorrecaoItem = {
   description: string;
   result: {
     title: string;
-    needs: string[];
-    where?: string[];
+    text: string;
+    links?: { label: string; url: string }[];
   };
 };
 
@@ -156,8 +156,8 @@ export const itensCorrecao: CorrecaoItem[] = [
     label: "Nome do proprietário",
     description: "Corrigir ou atualizar o nome do proprietário ou possuidor do imóvel.",
     result: {
-      title: "Correção de informações do proprietário",
-      needs: ["Documento de identidade", "CPF", "Documento que comprove a propriedade"],
+      title: "Nome do proprietário",
+      text: "Para fazer essa alteração, você precisa de um documento oficial com foto e de um documento que comprove o nome correto, como uma certidão de casamento ou averbação. Esses documentos podem ser obtidos no Cartório de Registro Civil.",
     },
   },
   {
@@ -165,8 +165,12 @@ export const itensCorrecao: CorrecaoItem[] = [
     label: "CPF ou CNPJ",
     description: "Corrigir o CPF ou CNPJ informado no cadastro.",
     result: {
-      title: "Correção de informações do proprietário",
-      needs: ["Documento de identidade", "CPF", "Documento que comprove a propriedade"],
+      title: "CPF ou CNPJ",
+      text: "Para corrigir essa informação, você precisa do comprovante de inscrição no CPF ou no CNPJ. O CPF pode ser consultado na Receita Federal, e o CNPJ pode ser emitido pela Receita Federal ou pela Redesim.",
+      links: [
+        { label: "Emitir/regularizar CPF", url: "https://www.gov.br/receitafederal/pt-br/assuntos/meu-cpf" },
+        { label: "Emitir/regularizar CNPJ", url: "https://share.google/pi6T9TjAEaPJKfsnP" },
+      ],
     },
   },
   {
@@ -174,8 +178,8 @@ export const itensCorrecao: CorrecaoItem[] = [
     label: "Endereço do proprietário",
     description: "Atualizar o endereço e os dados de contato do responsável pelo imóvel.",
     result: {
-      title: "Correção de informações do proprietário",
-      needs: ["Documento de identidade", "CPF", "Documento que comprove a propriedade"],
+      title: "Endereço do proprietário",
+      text: "Para atualizar o endereço, você precisa de um comprovante de residência atualizado ou de outro documento que contenha o endereço correto, como contas de água, energia, internet ou correspondência bancária.",
     },
   },
   {
@@ -183,8 +187,8 @@ export const itensCorrecao: CorrecaoItem[] = [
     label: "Área da propriedade",
     description: "Corrigir a área total do imóvel cadastrada no CAR.",
     result: {
-      title: "Correção de informações da propriedade",
-      needs: ["Matrícula atualizada", "Mapa da propriedade", "Georreferenciamento (quando houver)"],
+      title: "Área da propriedade",
+      text: "Para corrigir a área do imóvel, você precisa da matrícula, escritura, memorial descritivo ou levantamento topográfico. Esses documentos podem ser obtidos no Cartório de Registro de Imóveis ou com um profissional habilitado como engenheiro agrimensor ou técnico autorizado.",
     },
   },
   {
@@ -192,8 +196,9 @@ export const itensCorrecao: CorrecaoItem[] = [
     label: "Limites da propriedade",
     description: "Corrigir as divisas e os limites da propriedade informados no mapa.",
     result: {
-      title: "Correção de informações da propriedade",
-      needs: ["Matrícula atualizada", "Mapa da propriedade", "Georreferenciamento (quando houver)"],
+      title: "Limites da propriedade e mapa",
+      text: "Para corrigir os limites ou o desenho do imóvel, você precisa da planta, memorial descritivo ou arquivo georreferenciado da propriedade, elaborados por engenheiro, agrimensor ou outro profissional habilitado.",
+      links: [{ label: "Saiba mais no SIGEF/INCRA", url: "https://sigef.incra.gov.br/" }],
     },
   },
   {
@@ -201,8 +206,9 @@ export const itensCorrecao: CorrecaoItem[] = [
     label: "Mapa desenhado incorretamente",
     description: "Corrigir erros no desenho da área do imóvel dentro do sistema.",
     result: {
-      title: "Correção de informações da propriedade",
-      needs: ["Matrícula atualizada", "Mapa da propriedade", "Georreferenciamento (quando houver)"],
+      title: "Limites da propriedade e mapa",
+      text: "Para corrigir os limites ou o desenho do imóvel, você precisa da planta, memorial descritivo ou arquivo georreferenciado da propriedade, elaborados por engenheiro, agrimensor ou outro profissional habilitado.",
+      links: [{ label: "Saiba mais no SIGEF/INCRA", url: "https://sigef.incra.gov.br/" }],
     },
   },
   {
@@ -210,8 +216,8 @@ export const itensCorrecao: CorrecaoItem[] = [
     label: "Reserva Legal",
     description: "Incluir, corrigir ou atualizar a área de Reserva Legal da propriedade.",
     result: {
-      title: "Reserva Legal pendente",
-      needs: ["Matrícula da propriedade", "Mapa da área", "Informações ambientais da propriedade"],
+      title: "Reserva Legal e Área de Preservação Permanente (APP)",
+      text: "Para atualizar essas informações, você precisa do mapa atualizado da propriedade e, quando necessário, de um levantamento ambiental realizado por profissional habilitado como engenheiro agrimensor ou técnico autorizado.",
     },
   },
   {
@@ -219,8 +225,8 @@ export const itensCorrecao: CorrecaoItem[] = [
     label: "Área de Preservação Permanente (APP)",
     description: "Corrigir ou atualizar áreas de rios, nascentes, lagoas, encostas e demais APPs.",
     result: {
-      title: "APP pendente",
-      needs: ["Mapa da propriedade", "Informações da área protegida"],
+      title: "Reserva Legal e Área de Preservação Permanente (APP)",
+      text: "Para atualizar essas informações, você precisa do mapa atualizado da propriedade e, quando necessário, de um levantamento ambiental realizado por profissional habilitado como engenheiro agrimensor ou técnico autorizado.",
     },
   },
   {
@@ -229,7 +235,7 @@ export const itensCorrecao: CorrecaoItem[] = [
     description: "Adicionar documentos que não foram anexados anteriormente.",
     result: {
       title: "Inclusão de documentos",
-      needs: ["Documentos que faltam, digitalizados de forma legível (PDF ou imagem)"],
+      text: "Para anexar documentos que ficaram faltando, basta apresentar os arquivos solicitados, como matrícula, escritura, contrato de posse, procuração ou documentos pessoais, conforme a pendência.",
     },
   },
   {
@@ -238,7 +244,7 @@ export const itensCorrecao: CorrecaoItem[] = [
     description: "Remover dados, documentos ou informações cadastradas por engano.",
     result: {
       title: "Exclusão de informações incorretas",
-      needs: ["Identificação do dado a ser removido", "Justificativa da correção"],
+      text: "Para remover informações cadastradas por engano, você pode precisar apresentar documentos que comprovem o erro e a informação correta, como matrícula atualizada, documentos pessoais ou declaração.",
     },
   },
   {
@@ -247,11 +253,7 @@ export const itensCorrecao: CorrecaoItem[] = [
     description: "Informar mudança de proprietário, posse, herança, compra e venda ou doação.",
     result: {
       title: "Atualização de posse ou propriedade",
-      needs: [
-        "Documento que comprove a nova situação (escritura, contrato, inventário)",
-        "Matrícula atualizada",
-        "Documentos pessoais do novo titular",
-      ],
+      text: "Para informar mudança de proprietário ou posse, você precisa de documentos como escritura pública, matrícula atualizada, contrato de compra e venda, formal de partilha, inventário, termo de doação ou outro documento que comprove a transferência.",
     },
   },
   {
@@ -260,8 +262,8 @@ export const itensCorrecao: CorrecaoItem[] = [
     description: "Corrigir conflitos de limites entre propriedades vizinhas.",
     result: {
       title: "Sobreposição com imóvel vizinho",
-      needs: ["Matrícula atualizada", "Mapa correto da propriedade", "Georreferenciamento"],
-      where: ["Órgão ambiental", "Técnico especializado"],
+      text: "Para corrigir esse tipo de pendência, você precisa da planta, memorial descritivo e levantamento georreferenciado atualizados, elaborados por profissional habilitado como engenheiro agrimensor ou técnico autorizado. Em alguns casos, também pode ser necessária a matrícula atualizada do imóvel.",
+      links: [{ label: "Saiba mais no SIGEF/INCRA", url: "https://sigef.incra.gov.br/" }],
     },
   },
 ];

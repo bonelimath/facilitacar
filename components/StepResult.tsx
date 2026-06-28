@@ -172,32 +172,23 @@ export default function StepResult({
                   </span>
                   {item.result.title}
                 </h3>
-                <p className="text-[13.5px] text-[rgba(255,255,255,.62)] mt-1 mb-3">
-                  Você precisará apresentar:
+                <p className="mt-2 text-[14.5px] text-[rgba(255,255,255,.78)] leading-relaxed">
+                  {item.result.text}
                 </p>
-                <ul className="space-y-1.5">
-                  {item.result.needs.map((need) => (
-                    <li
-                      key={need}
-                      className="flex items-start gap-2 text-[14px] text-[rgba(255,255,255,.78)]"
-                    >
-                      <span className="text-[#74e6a6] mt-0.5 flex-shrink-0">•</span>
-                      {need}
-                    </li>
-                  ))}
-                </ul>
-                {item.result.where && (
-                  <div className="mt-3 pt-3 border-t border-[rgba(255,255,255,.08)]">
-                    <p className="text-[12px] font-semibold text-[rgba(255,255,255,.62)] mb-1.5 uppercase tracking-wider">
-                      Onde buscar ajuda:
-                    </p>
-                    <ul className="space-y-1">
-                      {item.result.where.map((w) => (
-                        <li key={w} className="text-[14px] text-[rgba(255,255,255,.78)]">
-                          → {w}
-                        </li>
-                      ))}
-                    </ul>
+                {item.result.links && item.result.links.length > 0 && (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {item.result.links.map((link) => (
+                      <a
+                        key={link.url}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[#74e6a6] hover:text-[#8ff0bc] transition-colors"
+                      >
+                        {link.label}
+                        <IconExternalLink />
+                      </a>
+                    ))}
                   </div>
                 )}
               </div>
@@ -222,8 +213,8 @@ export default function StepResult({
         </div>
       )}
 
-      {/* CTA emissão do CAR filtrada por UF */}
-      <div className="bg-[rgba(255,255,255,.05)] border border-[rgba(255,255,255,.12)] rounded-[16px] p-6 space-y-4">
+      {/* CTA emissão do CAR filtrada por UF — apenas para novo cadastro */}
+      {isNew && <div className="bg-[rgba(255,255,255,.05)] border border-[rgba(255,255,255,.12)] rounded-[16px] p-6 space-y-4">
         {selectedUF && (
           <div className="flex items-center gap-2">
             <span className="text-[12px] font-bold uppercase tracking-[0.05em] text-[rgba(255,255,255,.62)]">
@@ -251,7 +242,7 @@ export default function StepResult({
           {ufSistema ? "Acessar sistema do estado" : "Acessar Portal SICAR Nacional"}
           <IconExternalLink />
         </a>
-      </div>
+      </div>}
 
       {/* Ponto de atendimento — sempre visível */}
       {orgao && (
