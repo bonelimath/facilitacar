@@ -44,15 +44,13 @@ export default function Home() {
             className="flex items-center gap-2.5 hover:opacity-80 transition-opacity"
           >
             <Image
-              src="/car-logo.png"
+              src="/logo.png"
               alt="FacilitaCAR"
-              width={24}
-              height={24}
-              className="h-4 w-auto"
+              width={266}
+              height={200}
+              className="h-10 w-auto"
+              priority
             />
-            <span className="font-bold text-[16px] text-[#eaf6ee]">
-              Facilita<span className="text-[#74e6a6]">CAR</span>
-            </span>
           </button>
           <span className="text-[11px] font-semibold px-3 py-1 rounded-full tracking-wide text-white bg-[rgba(116,230,166,.13)] border border-[rgba(116,230,166,.25)] text-center leading-tight">
             Manual Simplificado<br />do CAR
